@@ -86,7 +86,8 @@ us_state_to_abbrev = {
 }
 
 abbrev_to_us_state = dict(map(reversed, us_state_to_abbrev.items()))
-required_cols = ['Date','ppt (inches)','tmin (degrees F)','tmean (degrees F)','tmax (degrees F)','tdmean (degrees F)','vpdmin (hPa)','vpdmax (hPa)']
+required_cols = ['Date','ppt (inches)','tmin (degrees F)','tmean (degrees F)','tmax (degrees F)',
+                 'tdmean (degrees F)','vpdmin (hPa)','vpdmax (hPa)']
 
 for file in os.listdir(base_path):
     #print(file)
@@ -110,6 +111,33 @@ for file in os.listdir(base_path):
     temp_df['State'] = state
     temp_df['Region'] = region
     state_df = pd.concat([state_df,temp_df],axis=0)
+
+state_df['Date'] = pd.to_datetime(state_df['Date'])
+state_df['Day']  = state_df['Date'].dt.day
+state_df['Month'] = state_df['Date'].dt.month
+state_df['Year'] = state_df['Date'].dt.year
+
+renamed_cols = ['Precipitation(Inches)','Min_Temperature(F)','Mean_Temperature(F)','Max_Temperature(F)','Mean_Dewpoint_Temp(F)',
+                'Min_VPD(hPa)','Max_VPD(hPa)']
+
+required_cols.remove('Date')
+cols = dict(zip(required_cols,renamed_cols))
+
+state_df = state_df.rename(columns=cols)
+
+def month_season_mapping(month:int)-> str:
+    if month in [1,2,12]:
+        return 'Winter'
+    elif month in [3,4,5]:
+        return 'Spring'
+    elif month in [6,7,8]:
+        return 'Summer'
+    return 'Fall'
+
+state_df = state_df[state_df.Year!=2024]
+state_df['Precipitation(mm)'] = state_df['Precipitation(Inches)']*25.4 
+state_df['Season'] = state_df['Month'].apply(lambda row: month_season_mapping(row))
+state_df = state_df.set_index('Date')
 
 state_df.to_csv(r"Inputs\TemperatureAnalysis.csv")
 
