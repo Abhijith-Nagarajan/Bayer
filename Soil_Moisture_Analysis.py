@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np 
 import requests
 import json
+from soil_analysis_database import DatabaseCRUDOperations
 
 # Weather bit endpoints - https://api.weatherbit.io/v2.0/current?lat=35.7796&lon=-78.6382&key=API_KEY&include=minutely
 weatherbit_api_key = "fdcf917e61644e42b23bda85da0c0309"
@@ -55,5 +56,17 @@ print(openweather_data)
 
 weatherbit_data['data'][0]['dewpt']
 print(type(openweather_api_request.text))
+
+database_path = r"Database\\soil_analysis.db"
+
+soil_db_obj = DatabaseCRUDOperations(database_path)
+
+insert_query = "INSERT INTO Soil_Moisture VALUES ('SFO', '2024-01-31 19:29:00', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);"
+soil_db_obj.insert_records(insert_query)
+
+results = soil_db_obj.read_table("Select * FROM Soil_Moisture")    
+
+for row in results:
+    print(row)
 
 
