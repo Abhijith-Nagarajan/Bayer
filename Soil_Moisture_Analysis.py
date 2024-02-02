@@ -10,74 +10,10 @@ weatherbit_api_key = "fdcf917e61644e42b23bda85da0c0309"
 # OpenWeather endpoint - https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API key}
 openweather_api_key = "464f061d35c8e41f2c783f8262dc42b1"
 
+#Weather bit base endpoint
 weatherbit_endpoint = r"https://api.weatherbit.io/v2.0/current?"
+#Open weather base endpoint
 openweather_endpoint = r"https://api.openweathermap.org/data/2.5/weather?"
-
-geospatial_df = pd.read_excel(".\Inputs\City_Geospatial_Data.xlsx")
-
-def get_required_fields(api_json, is_weatherbit_data:True):
-        if is_weatherbit_data:
-                weatherbit_data = api_json['data'][0]
-                date = weatherbit_data['datetime']
-                dew_pt_temp = weatherbit_data['dewpt']
-                temp = weatherbit_data['temp']
-                snow = weatherbit_data['snow']
-                solar_radiation= weatherbit_data['solar_rad']
-                wind_speed = weatherbit_data['wind_spd']
-
-                return(date,dew_pt_temp,temp,snow,solar_radiation,wind_speed)
-        else:
-                print('openweather data')
-        
-def retrieve_data(latitude,longitude):
-        weatherbit_request = f"lat={latitude}&lon={longitude}&key="+weatherbit_api_key+"&include=minutely"
-        weatherbit_api_request = requests.get(weatherbit_endpoint+weatherbit_request)
-
-        openweather_request = f"lat={latitude}&lon={longitude}&appid="+openweather_api_key
-        openweather_api_request = requests.get(openweather_endpoint+openweather_request)
-
-        weatherbit_json = json.loads(weatherbit_api_request.text)
-        openweather_json = json.loads(openweather_api_request.text)
-
-        return (weatherbit_json, openweather_json)
-
-for index,row in geospatial_df.iterrows():
-      latitude = row[1]
-      longitude = row[2]
-      city = row[0]
-      weatherbit_data, openweather_data = retrieve_data(latitude,longitude)
-      
-
-
-
-database_path = r"Database\\soil_analysis.db"
-soil_db_obj = DatabaseCRUDOperations(database_path)
-insert_query = "INSERT INTO Soil_Moisture VALUES ('SFO', '2024-01-31 19:29:00', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);"
-soil_db_obj.insert_records(insert_query)
-
-results = soil_db_obj.read_table("Select * FROM Soil_Moisture")    
-
-for row in results:
-    print(row)
-
-
-test_weatherbit = "lat=40.8620&lon=-74.5444&key="+weatherbit_api_key+"&include=minutely"
-test_openweather = "lat=40.8620&lon=-74.5444&appid="+openweather_api_key
-
-#Get latitude and longitude for each place and call API
-
-weatherbit_api_request = requests.get(weatherbit_endpoint+test_weatherbit)
-openweather_api_request = requests.get(openweather_endpoint+test_openweather)
-
-print(weatherbit_api_request.text)
-print(openweather_api_request.text)
-
-print(openweather_data)
-
-weatherbit_data = json.loads(weatherbit_api_request.text)
-weatherbit_data['data'][0]
-
-['dewpt']
 
 '''
 Soil Moisture = (0.408*delta*(Rn-G) + gamma*[900/(T+273)]*u2(es-ea))/(delta+gamma(1+0.34*u2))
@@ -108,7 +44,152 @@ alpha = Lies in [0,1] depending on nature of land.
         If 5 < snow < 10: alpha = 0.5
         If 0 <= snow <= 5: alpha = 0.15
 '''
+def transform_input_data(input_data:list)->str:
+        '''
+        The objective of this function is to modify the input data to insert into the database.
+        '''
+        fields_str = "("
+        for item in input_data:
+                if isinstance(item,str):
+                        fields_str+="'"+item+"',"
+                else:
+                        fields_str+=str(item)+","
+        fields_str = fields_str[:-1]+")"
 
+        return fields_str
 
+def calculate_inputs(temperature,dew_pt_temp)->list:
+        '''
+        This method is to compute SaturationVapourPressure,ActualVapourPressure,SaturationVapourPressureDeficit,delta
+        '''
+        es_exp = 7.5*dew_pt_temp/(237.5+dew_pt_temp)
+        ea_exp = 7.5*temperature/(237.5+temperature)
 
+        es = 6.11*10^(es_exp)
+        ea = 6.11*10^(ea_exp)
+       
+        delta = (4098*es)/(temperature+237.5)^2
+
+        
+        return []
+
+def get_required_fields(weatherbit_data: dict, openweather_data: dict)->list:
+        '''
+        The objective of this function is to retrieve the required fields for inserting into the database.
+        '''
+        print("Retrieving data from weatherbit API")
+        weatherbit_data = weatherbit_data['data'][0]
+        date = weatherbit_data['datetime']
+        dew_pt_temp = weatherbit_data['dewpt']
+        temp = weatherbit_data['temp']
+        snow = weatherbit_data['snow']
+        solar_radiation= weatherbit_data['solar_rad']
+        wind_speed = weatherbit_data['wind_spd']
+
+        print("Retrieving data from Openweather API")
+        temperature_in_kelvin = openweather_data['main']['temp']
+        #pressure = openweather_data['main']['pressure']
+        humidity = openweather_data['main']['humidity']
+        wind_speed_ow = openweather_data['wind']['speed']
+
+        temp_in_celsius = temperature_in_kelvin - 273.15
+        temperature = (temp + temp_in_celsius)/2
+
+        wind_speed = (wind_speed + wind_speed_ow)/2
+
+        vapour_details = calculate_inputs(temperature,dew_pt_temp)
+
+        return [date,dew_pt_temp,temperature,snow,solar_radiation,wind_speed,humidity]
+
+def make_API_request(latitude,longitude):
+        '''
+        The objective of this function is to use GET requests to retrieve API data from weatherbit and openweather.
+        '''
+        weatherbit_request = f"lat={latitude}&lon={longitude}&key="+weatherbit_api_key+"&include=minutely"
+        weatherbit_api_request = requests.get(weatherbit_endpoint+weatherbit_request)
+
+        openweather_request = f"lat={latitude}&lon={longitude}&appid="+openweather_api_key
+        openweather_api_request = requests.get(openweather_endpoint+openweather_request)
+
+        weatherbit_json = json.loads(weatherbit_api_request.text)
+        openweather_json = json.loads(openweather_api_request.text)
+
+        return (weatherbit_json, openweather_json)
+
+geospatial_df = pd.read_excel(".\Inputs\City_Geospatial_Data_Test.xlsx")
+data_to_insert = ""
+for index,row in geospatial_df.iterrows():
+      latitude = row[1]
+      longitude = row[2]
+      city = row[0]
+      weatherbit_data, openweather_data = make_API_request(latitude,longitude)
+      input_data = get_required_fields(weatherbit_data, openweather_data)
+      input_data.insert(0,city)
+      data_to_insert += transform_input_data(input_data)+", "
+
+data_to_insert = data_to_insert.rstrip(", ")
+
+database_path = r"Database\\soil_analysis.db"
+soil_db_obj = DatabaseCRUDOperations(database_path)
+insert_query = "INSERT INTO Soil_Moisture (City,Date,Windspeed,Temperature(C),DewPointTemperature(C),SaturationVapourPressure,ActualVapourPressure,SaturationVapourPressureDeficit,Delta,Alpha,SolarRadiation,NetSolarRadiation,SoilHeatFluxDensity) VALUES "+data_to_insert
+#insert_query = "INSERT INTO Soil_Moisture VALUES ('SFO', '2024-01-31 19:29:00', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);"
+soil_db_obj.insert_records(insert_query)
+
+results = soil_db_obj.read_table("Select * FROM Soil_Moisture")    
+for row in results:
+    print(row)
+
+'''
+items = ['apple',1,2,3,'orange']
+
+fields = "("
+for item in items:
+        if isinstance(item,str):
+              fields+="'"+item+"',"
+        else:
+              fields+=str(item)+","
+fields = fields[:-1]+")"
+
+for item in items:
+       if item.type=="__str__":
+              print("yes")
+
+test_weatherbit = "lat=40.8620&lon=-74.5444&key="+weatherbit_api_key+"&include=minutely"
+test_openweather = "lat=40.8620&lon=-74.5444&appid="+openweather_api_key
+
+#Get latitude and longitude for each place and call API
+weatherbit_api_request = requests.get(weatherbit_endpoint+test_weatherbit)
+openweather_api_request = requests.get(openweather_endpoint+test_openweather)
+
+print(weatherbit_api_request.text)
+print(openweather_api_request.text)
+
+print(openweather_data)
+
+weatherbit_data = json.loads(weatherbit_api_request.text)
+weatherbit_data = weatherbit_data['data'][0]
+
+openweather_data = json.loads(openweather_api_request.text)
+
+temperature = openweather_data['main']['temp']
+pressure = openweather_data['main']['pressure']
+humidity = openweather_data['main']['humidity']
+wind_speed = openweather_data['wind']['speed']
+
+test_str = ""
+for i in range(5):
+       test_str += "ABC"+",\n"
+print(test_str[:-1])
+
+'''
+
+test_weatherbit = "lat=40.8620&lon=-74.5444&key="+weatherbit_api_key+"&include=minutely"
+test_openweather = "lat=40.8620&lon=-74.5444&appid="+openweather_api_key
+
+#Get latitude and longitude for each place and call API
+weatherbit_api_request = requests.get(weatherbit_endpoint+test_weatherbit)
+openweather_api_request = requests.get(openweather_endpoint+test_openweather)
+
+weatherbit_data = json.loads(weatherbit_api_request.text)
+openweather_data = json.loads(openweather_api_request.text)
 
