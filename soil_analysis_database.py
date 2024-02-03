@@ -48,23 +48,27 @@ class DatabaseCRUDOperations:
         self.cursor.execute(delete_query)
         self.db_connection.commit()
     
+    def drop_table(self,table_name:str)->None:
+        print(f"Dropping table: {table_name}")
+        self.cursor.execute(f"Drop table {table_name}")
+
     def close_connection(self)->None:
         print("Closing Database connection")
         self.db_connection.close()
 
-'''
+
 database_path = r"Database\\soil_analysis.db"
 
 soil_db = DatabaseCRUDOperations(database_path)
-
 table_name = "Soil_Moisture"
 table_schema = """
                 (
+                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     City nvarchar(200),
                     Date datetime,
                     WindSpeed numeric,
-                    "Temperature(C)" numeric,
-                    "DewPointTemperature(C)" numeric,
+                    Temperature_Celsius numeric,
+                    DewPointTemperature_Celsius numeric,
                     SaturationVapourPressure numeric,
                     ActualVapourPressure numeric,
                     SaturationVapourPressureDeficit numeric,
@@ -76,10 +80,14 @@ table_schema = """
                 );
                 """
 
+'''
 soil_db.create_table(table_name,table_schema)
-insert_query = "INSERT INTO Soil_Moisture VALUES ('SFO', '2024-01-31 19:29:00', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);"
+insert_query = "INSERT INTO Soil_Moisture (City,Date,Windspeed,Temperature_Celsius,DewPointTemperature_Celsius,SaturationVapourPressure,ActualVapourPressure,SaturationVapourPressureDeficit,Delta,Alpha,SolarRadiation,NetSolarRadiation,SoilHeatFluxDensity) VALUES ('SFO', '2024-01-31 19:29:00', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);"
 
 soil_db.insert_records(insert_query)
+delete_query = "delete from Soil_Moisture where ID=1"
+soil_db.delete_records(delete_query)
+
 
 results = soil_db.read_table("Select * FROM Soil_Moisture")    
 

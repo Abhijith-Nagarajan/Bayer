@@ -58,20 +58,30 @@ def transform_input_data(input_data:list)->str:
 
         return fields_str
 
-def calculate_inputs(temperature,dew_pt_temp)->list:
+def calculate_inputs(temperature,dew_pt_temp,dni,dhi,ghi,solar_radiation)->list:
         '''
         This method is to compute SaturationVapourPressure,ActualVapourPressure,SaturationVapourPressureDeficit,delta
         '''
+
+        print("Calculating all the required input fields")
         es_exp = 7.5*dew_pt_temp/(237.5+dew_pt_temp)
         ea_exp = 7.5*temperature/(237.5+temperature)
 
-        es = 6.11*10^(es_exp)
-        ea = 6.11*10^(ea_exp)
-       
-        delta = (4098*es)/(temperature+237.5)^2
+        es = np.round(6.11*pow(10,es_exp),4)
+        ea = np.round(6.11*pow(10,ea_exp),4)
 
-        
-        return []
+        saturation_vapour_pressure_deficit = np.round(es-ea,4)
+        delta = np.round((4098*es)/(pow(temperature+237.5,2)),4)
+
+        if ghi==0:
+                alpha = 1 
+        else:
+                alpha = np.round(1 - ((dni+dhi)/ghi),4)
+
+        net_solar_raditation = np.round((1-alpha)*solar_radiation/(1.14),4)
+        soil_heat_flux_density = 0.14*net_solar_raditation
+
+        return [es,ea,saturation_vapour_pressure_deficit,delta,alpha,solar_radiation,net_solar_raditation,soil_heat_flux_density]
 
 def get_required_fields(weatherbit_data: dict, openweather_data: dict)->list:
         '''
@@ -82,24 +92,30 @@ def get_required_fields(weatherbit_data: dict, openweather_data: dict)->list:
         date = weatherbit_data['datetime']
         dew_pt_temp = weatherbit_data['dewpt']
         temp = weatherbit_data['temp']
-        snow = weatherbit_data['snow']
+        #snow = weatherbit_data['snow']
         solar_radiation= weatherbit_data['solar_rad']
         wind_speed = weatherbit_data['wind_spd']
+        dhi = weatherbit_data['dhi']
+        dni = weatherbit_data['dni']
+        ghi = weatherbit_data['ghi']
 
         print("Retrieving data from Openweather API")
-        temperature_in_kelvin = openweather_data['main']['temp']
         #pressure = openweather_data['main']['pressure']
-        humidity = openweather_data['main']['humidity']
+        #humidity = openweather_data['main']['humidity']
+        temperature_in_kelvin = openweather_data['main']['temp']
         wind_speed_ow = openweather_data['wind']['speed']
 
         temp_in_celsius = temperature_in_kelvin - 273.15
-        temperature = (temp + temp_in_celsius)/2
+        temperature = np.round((temp + temp_in_celsius)/2,4)
 
-        wind_speed = (wind_speed + wind_speed_ow)/2
+        wind_speed = np.round((wind_speed + wind_speed_ow)/2,4)
 
-        vapour_details = calculate_inputs(temperature,dew_pt_temp)
+        print("Data retrieved both APIs successfully")
+        calculated_inputs = calculate_inputs(temperature,dew_pt_temp,dni,dhi,ghi,solar_radiation)
 
-        return [date,dew_pt_temp,temperature,snow,solar_radiation,wind_speed,humidity]
+        print(calculate_inputs)
+
+        return [date,wind_speed,temperature,dew_pt_temp]+calculated_inputs
 
 def make_API_request(latitude,longitude):
         '''
@@ -116,12 +132,13 @@ def make_API_request(latitude,longitude):
 
         return (weatherbit_json, openweather_json)
 
-geospatial_df = pd.read_excel(".\Inputs\City_Geospatial_Data_Test.xlsx")
+geospatial_df = pd.read_excel(".\Inputs\City_Geospatial_Data.xlsx")
 data_to_insert = ""
 for index,row in geospatial_df.iterrows():
       latitude = row[1]
       longitude = row[2]
       city = row[0]
+      print(f'Retrieving data for {city}')
       weatherbit_data, openweather_data = make_API_request(latitude,longitude)
       input_data = get_required_fields(weatherbit_data, openweather_data)
       input_data.insert(0,city)
@@ -131,14 +148,17 @@ data_to_insert = data_to_insert.rstrip(", ")
 
 database_path = r"Database\\soil_analysis.db"
 soil_db_obj = DatabaseCRUDOperations(database_path)
-insert_query = "INSERT INTO Soil_Moisture (City,Date,Windspeed,Temperature(C),DewPointTemperature(C),SaturationVapourPressure,ActualVapourPressure,SaturationVapourPressureDeficit,Delta,Alpha,SolarRadiation,NetSolarRadiation,SoilHeatFluxDensity) VALUES "+data_to_insert
+
+insert_query = "INSERT INTO Soil_Moisture (City,Date,Windspeed,Temperature_Celsius,DewPointTemperature_Celsius,SaturationVapourPressure,ActualVapourPressure,SaturationVapourPressureDeficit,Delta,Alpha,SolarRadiation,NetSolarRadiation,SoilHeatFluxDensity) VALUES "+data_to_insert
+
 #insert_query = "INSERT INTO Soil_Moisture VALUES ('SFO', '2024-01-31 19:29:00', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);"
 soil_db_obj.insert_records(insert_query)
+
+soil_db_obj.close_connection()
 
 results = soil_db_obj.read_table("Select * FROM Soil_Moisture")    
 for row in results:
     print(row)
-
 '''
 items = ['apple',1,2,3,'orange']
 
@@ -160,6 +180,8 @@ test_openweather = "lat=40.8620&lon=-74.5444&appid="+openweather_api_key
 #Get latitude and longitude for each place and call API
 weatherbit_api_request = requests.get(weatherbit_endpoint+test_weatherbit)
 openweather_api_request = requests.get(openweather_endpoint+test_openweather)
+weatherbit_data = json.loads(weatherbit_api_request.text)
+openweather_data = json.loads(openweather_api_request.text)
 
 print(weatherbit_api_request.text)
 print(openweather_api_request.text)
@@ -181,15 +203,17 @@ for i in range(5):
        test_str += "ABC"+",\n"
 print(test_str[:-1])
 
-'''
+latitude, longitude = 41.2956,-82.1512
 
-test_weatherbit = "lat=40.8620&lon=-74.5444&key="+weatherbit_api_key+"&include=minutely"
-test_openweather = "lat=40.8620&lon=-74.5444&appid="+openweather_api_key
 
-#Get latitude and longitude for each place and call API
+test_weatherbit = f"lat={latitude}&lon={longitude}&key="+weatherbit_api_key+"&include=minutely"
+test_openweather = "lat={latitude}&lon={longitude}&appid="+openweather_api_key
+
 weatherbit_api_request = requests.get(weatherbit_endpoint+test_weatherbit)
 openweather_api_request = requests.get(openweather_endpoint+test_openweather)
-
 weatherbit_data = json.loads(weatherbit_api_request.text)
 openweather_data = json.loads(openweather_api_request.text)
+
+print(openweather_data)	
+'''
 
