@@ -132,7 +132,7 @@ def make_API_request(latitude,longitude):
 
         return (weatherbit_json, openweather_json)
 
-geospatial_df = pd.read_excel(".\Inputs\City_Geospatial_Data.xlsx")
+geospatial_df = pd.read_excel(".\Inputs\City_Geospatial_Data_Test.xlsx")
 data_to_insert = ""
 for index,row in geospatial_df.iterrows():
       latitude = row[1]
@@ -204,7 +204,6 @@ for i in range(5):
 print(test_str[:-1])
 
 latitude, longitude = 41.2956,-82.1512
-
 
 test_weatherbit = f"lat={latitude}&lon={longitude}&key="+weatherbit_api_key+"&include=minutely"
 test_openweather = "lat={latitude}&lon={longitude}&appid="+openweather_api_key
