@@ -1,0 +1,1469 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0805.0415                               -->
+<workbook original-version='18.1' source-build='2023.2.1 (20232.23.0805.0415)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+    <ZoneFriendlyName />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='TemperatureAnalysis' inline='true' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='TemperatureAnalysis' name='textscan.03zp1bd04j3w210zp4awu1yw720l'>
+            <connection class='textscan' directory='E:/Bayer/Inputs' filename='TemperatureAnalysis.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.03zp1bd04j3w210zp4awu1yw720l' name='TemperatureAnalysis.csv' table='[TemperatureAnalysis#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='real' name='Precipitation(Inches)' ordinal='1' />
+            <column datatype='real' name='Min_Temperature(F)' ordinal='2' />
+            <column datatype='real' name='Mean_Temperature(F)' ordinal='3' />
+            <column datatype='real' name='Max_Temperature(F)' ordinal='4' />
+            <column datatype='real' name='Mean_Dewpoint_Temp(F)' ordinal='5' />
+            <column datatype='real' name='Min_VPD(hPa)' ordinal='6' />
+            <column datatype='real' name='Max_VPD(hPa)' ordinal='7' />
+            <column datatype='string' name='City' ordinal='8' />
+            <column datatype='string' name='State_Abb' ordinal='9' />
+            <column datatype='string' name='State' ordinal='10' />
+            <column datatype='string' name='Region' ordinal='11' />
+            <column datatype='integer' name='Day' ordinal='12' />
+            <column datatype='integer' name='Month' ordinal='13' />
+            <column datatype='integer' name='Year' ordinal='14' />
+            <column datatype='real' name='Precipitation(mm)' ordinal='15' />
+            <column datatype='string' name='Season' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.03zp1bd04j3w210zp4awu1yw720l' name='TemperatureAnalysis.csv' table='[TemperatureAnalysis#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='real' name='Precipitation(Inches)' ordinal='1' />
+            <column datatype='real' name='Min_Temperature(F)' ordinal='2' />
+            <column datatype='real' name='Mean_Temperature(F)' ordinal='3' />
+            <column datatype='real' name='Max_Temperature(F)' ordinal='4' />
+            <column datatype='real' name='Mean_Dewpoint_Temp(F)' ordinal='5' />
+            <column datatype='real' name='Min_VPD(hPa)' ordinal='6' />
+            <column datatype='real' name='Max_VPD(hPa)' ordinal='7' />
+            <column datatype='string' name='City' ordinal='8' />
+            <column datatype='string' name='State_Abb' ordinal='9' />
+            <column datatype='string' name='State' ordinal='10' />
+            <column datatype='string' name='Region' ordinal='11' />
+            <column datatype='integer' name='Day' ordinal='12' />
+            <column datatype='integer' name='Month' ordinal='13' />
+            <column datatype='integer' name='Year' ordinal='14' />
+            <column datatype='real' name='Precipitation(mm)' ordinal='15' />
+            <column datatype='string' name='Season' ordinal='16' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Precipitation(Inches)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Precipitation(Inches)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Precipitation(Inches)</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Min_Temperature(F)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Min_Temperature(F)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Min_Temperature(F)</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Mean_Temperature(F)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Mean_Temperature(F)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Mean_Temperature(F)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Max_Temperature(F)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Max_Temperature(F)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Max_Temperature(F)</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Mean_Dewpoint_Temp(F)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Mean_Dewpoint_Temp(F)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Mean_Dewpoint_Temp(F)</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Min_VPD(hPa)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Min_VPD(hPa)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Min_VPD(hPa)</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Max_VPD(hPa)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Max_VPD(hPa)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Max_VPD(hPa)</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State_Abb</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State_Abb]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>State_Abb</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Day</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Day]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Day</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Precipitation(mm)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Precipitation(mm)]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Precipitation(mm)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Season</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Season]</local-name>
+            <parent-name>[TemperatureAnalysis.csv]</parent-name>
+            <remote-alias>Season</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='integer' name='[Day]' role='dimension' type='quantitative' />
+      <column caption='Max Temperature(F)' datatype='real' name='[Max_Temperature(F)]' role='measure' type='quantitative' />
+      <column caption='Max VPD(hPa)' datatype='real' name='[Max_VPD(hPa)]' role='measure' type='quantitative' />
+      <column caption='Mean Dewpoint Temp(F)' datatype='real' name='[Mean_Dewpoint_Temp(F)]' role='measure' type='quantitative' />
+      <column caption='Mean Temperature(F)' datatype='real' name='[Mean_Temperature(F)]' role='measure' type='quantitative' />
+      <column caption='Min Temperature(F)' datatype='real' name='[Min_Temperature(F)]' role='measure' type='quantitative' />
+      <column caption='Min VPD(hPa)' datatype='real' name='[Min_VPD(hPa)]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Season]' role='dimension' type='nominal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='State Abb' datatype='string' name='[State_Abb]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='TemperatureAnalysis.csv' datatype='table' name='[__tableau_internal_object_id__].[TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB]' role='measure' type='quantitative' />
+      <column-instance column='[Season]' derivation='None' name='[none:Season:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (Region,State,Year)' hidden='true' name='[Action (Region,State,Year)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Region]' />
+          <groupfilter function='level-members' level='[State]' />
+          <groupfilter function='level-members' level='[none:Year:ok]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Season:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Winter&quot;</bucket>
+            <bucket>&quot;Spring&quot;</bucket>
+            <bucket>&quot;Summer&quot;</bucket>
+            <bucket>&quot;Fall&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='TemperatureAnalysis.csv' id='TemperatureAnalysis.csv_E4B6A020D75E4F61BF7C35C2781A81AB'>
+            <properties context=''>
+              <relation connection='textscan.03zp1bd04j3w210zp4awu1yw720l' name='TemperatureAnalysis.csv' table='[TemperatureAnalysis#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='real' name='Precipitation(Inches)' ordinal='1' />
+                  <column datatype='real' name='Min_Temperature(F)' ordinal='2' />
+                  <column datatype='real' name='Mean_Temperature(F)' ordinal='3' />
+                  <column datatype='real' name='Max_Temperature(F)' ordinal='4' />
+                  <column datatype='real' name='Mean_Dewpoint_Temp(F)' ordinal='5' />
+                  <column datatype='real' name='Min_VPD(hPa)' ordinal='6' />
+                  <column datatype='real' name='Max_VPD(hPa)' ordinal='7' />
+                  <column datatype='string' name='City' ordinal='8' />
+                  <column datatype='string' name='State_Abb' ordinal='9' />
+                  <column datatype='string' name='State' ordinal='10' />
+                  <column datatype='string' name='Region' ordinal='11' />
+                  <column datatype='integer' name='Day' ordinal='12' />
+                  <column datatype='integer' name='Month' ordinal='13' />
+                  <column datatype='integer' name='Year' ordinal='14' />
+                  <column datatype='real' name='Precipitation(mm)' ordinal='15' />
+                  <column datatype='string' name='Season' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Plot_Filters' name='[Action1_8A459EC34E154CC98D6E263E95F14D80]'>
+      <source dashboard='Precipitation_Temp_DB' type='sheet' worksheet='State_Precipitation_Analysis' />
+      <link caption='Plot_Filters' delimiter=',' escape='\' expression='tsl:Precipitation_Temp_DB?%5Bfederated.1snuv4812ubd2s0zwngq10ae0tw0%5D.%5BRegion%5D~s0=&lt;[federated.1snuv4812ubd2s0zwngq10ae0tw0].[Region]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Total Cities,Total Years,Total Regions,Total Seasons' />
+        <param name='target' value='Precipitation_Temp_DB' />
+      </command>
+    </action>
+    <datasources>
+      <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+    </datasources>
+    <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+    </datasource-dependencies>
+  </actions>
+  <worksheets>
+    <worksheet name='State_Precipitation_Analysis'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+            <column datatype='real' name='[Precipitation(mm)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Precipitation(mm)]' derivation='Sum' name='[sum:Precipitation(mm):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:Region:nk]' member='&quot;Midwest&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]' filter-group='4'>
+            <groupfilter function='level-members' level='[none:State:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]' filter-group='5'>
+            <groupfilter function='level-members' level='[none:Year:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]</column>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]</column>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:qk]' field-type='quantitative' max='2024' min='2015' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[sum:Precipitation(mm):qk]' field-type='quantitative' max='5780.9733679917026' min='-431.73045064114251' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[sum:Precipitation(mm):qk]</rows>
+        <cols>(([federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk] / [federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]) * [federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:qk])</cols>
+      </table>
+      <simple-id uuid='{FCDABD43-DF93-4EEF-BD35-E90AF77B9A33}' />
+    </worksheet>
+    <worksheet name='State_Season_Temperature_Analysis'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+            <column caption='Mean Temperature(F)' datatype='real' name='[Mean_Temperature(F)]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Season]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Mean_Temperature(F)]' derivation='Avg' name='[avg:Mean_Temperature(F):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Season]' derivation='None' name='[none:Season:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:Region:nk]' member='&quot;Midwest&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Season:nk]'>
+            <groupfilter function='member' level='[none:Season:nk]' member='&quot;Winter&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]' filter-group='4'>
+            <groupfilter function='level-members' level='[none:State:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]' filter-group='5'>
+            <groupfilter function='level-members' level='[none:Year:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Season:nk]</column>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]</column>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]</column>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+        </panes>
+        <rows>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[avg:Mean_Temperature(F):qk]</rows>
+        <cols>(([federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk] / [federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Season:nk]) * [federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:qk])</cols>
+      </table>
+      <simple-id uuid='{6A0C0015-C827-486D-9E76-F38275BC1E46}' />
+    </worksheet>
+    <worksheet name='Total Cities'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+            <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[City]' derivation='CountD' name='[ctd:City:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]'>
+            <groupfilter function='member' level='[ctd:City:ok]' member='24' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-family' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='12' />
+            <format attr='text-align' data-class='subtotal' scope='cols' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='cols' value='center' />
+            <format attr='text-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='460' />
+            <format attr='text-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='text-align' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='center' />
+            <format attr='vertical-align' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='center' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' scope='rows' value='Tableau Semibold' />
+            <format attr='font-size' scope='rows' value='12' />
+            <format attr='color' scope='rows' value='#00314e' />
+            <format attr='font-family' scope='cols' value='Tableau Semibold' />
+            <format attr='font-size' scope='cols' value='12' />
+            <format attr='color' scope='cols' value='#00314e' />
+            <format attr='font-family' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='12' />
+            <format attr='color' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='#00314e' />
+            <format attr='text-format' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]' value='N' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+          </pane>
+        </panes>
+        <rows>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:City:ok]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{2AFC46D2-16E0-4018-B69F-08CF10DF433E}' />
+    </worksheet>
+    <worksheet name='Total Regions'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column-instance column='[Region]' derivation='CountD' name='[ctd:Region:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]'>
+            <groupfilter function='member' level='[ctd:Region:ok]' member='5' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]' value='352' />
+            <format attr='font-size' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]' value='12' />
+            <format attr='color' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]' value='#00314e' />
+            <format attr='font-family' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' scope='rows' value='Tableau Semibold' />
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+            <format attr='font-size' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]' value='12' />
+            <format attr='font-family' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]' value='Tableau Semibold' />
+            <format attr='font-size' scope='rows' value='12' />
+            <format attr='color' scope='rows' value='#00314e' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='subtotal' scope='rows' value='0' />
+            <format attr='border-style' data-class='subtotal' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <style>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Region:ok]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{118C3928-1C4F-4C1E-85D6-EDF653A6C74E}' />
+    </worksheet>
+    <worksheet name='Total Seasons'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+            <column datatype='string' name='[Season]' role='dimension' type='nominal' />
+            <column-instance column='[Season]' derivation='CountD' name='[ctd:Season:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Season:ok]' value='444' />
+            <format attr='text-align' data-class='subtotal' scope='rows' value='center' />
+            <format attr='vertical-align' data-class='subtotal' scope='rows' value='center' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Season:ok]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Season:ok]' value='12' />
+            <format attr='color' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Season:ok]' value='#00314e' />
+            <format attr='text-align' scope='cols' value='center' />
+            <format attr='vertical-align' scope='cols' value='center' />
+            <format attr='font-size' scope='cols' value='12' />
+            <format attr='color' scope='cols' value='#00314e' />
+            <format attr='font-family' scope='cols' value='Tableau Semibold' />
+            <format attr='font-family' scope='rows' value='Tableau Semibold' />
+            <format attr='font-size' scope='rows' value='12' />
+            <format attr='color' scope='rows' value='#00314e' />
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+          </pane>
+        </panes>
+        <rows>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Season:ok]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{4CC49475-C2A8-4DD2-80D6-EFF888D296B6}' />
+    </worksheet>
+    <worksheet name='Total Years'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+            <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Year]' derivation='CountD' name='[ctd:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]'>
+            <groupfilter function='member' level='[ctd:Year:ok]' member='7' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' scope='cols' value='#00000000' />
+            <format attr='tick-color' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='57' />
+            <format attr='font-family' data-class='subtotal' scope='cols' value='Tableau Semibold' />
+            <format attr='font-size' data-class='subtotal' scope='cols' value='12' />
+            <format attr='text-format' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='C1033%' />
+            <format attr='color' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='#01beff' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='340' />
+            <format attr='band-color' scope='rows' value='#ffffff' />
+            <format attr='font-family' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='Tableau Semibold' />
+            <format attr='font-size' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='12' />
+            <format attr='color' data-class='total' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='#00314e' />
+            <format attr='color' data-class='subtotal' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='#00314e' />
+            <format attr='background-color' scope='cols' value='#01beff' />
+            <format attr='background-color' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='#ffffff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' scope='rows' value='Tableau Semibold' />
+            <format attr='color' scope='rows' value='#000000' />
+            <format attr='font-weight' scope='rows' value='bold' />
+            <format attr='font-family' scope='cols' value='Tableau Semibold' />
+            <format attr='color' scope='cols' value='#000000' />
+            <format attr='font-size' scope='cols' value='12' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='font-family' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='Tableau Semibold' />
+            <format attr='font-size' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='12' />
+            <format attr='color' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='#000000' />
+            <format attr='text-format' field='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]' value='N' />
+            <format attr='font-size' scope='rows' value='12' />
+            <format attr='text-align' scope='rows' value='center' />
+            <format attr='vertical-align' scope='rows' value='center' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='subtotal' scope='rows' value='0' />
+            <format attr='border-style' data-class='subtotal' scope='rows' value='none' />
+            <format attr='band-color' scope='rows' value='#ffffff' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='1' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Polygon' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1snuv4812ubd2s0zwngq10ae0tw0].[ctd:Year:ok]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{6381B9FD-2FCF-44CF-9714-84C029531177}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Precipitation_Temp_DB'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='TemperatureAnalysis' name='federated.1snuv4812ubd2s0zwngq10ae0tw0' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1snuv4812ubd2s0zwngq10ae0tw0'>
+        <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Season]' role='dimension' type='nominal' />
+        <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+        <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+        <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Season]' derivation='None' name='[none:Season:nk]' pivot='key' type='nominal' />
+        <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone friendly-name='Body' h='75911' id='15' param='vert' type-v2='layout-flow' w='99674' x='326' y='23619'>
+          <zone fixed-size='350' friendly-name='Precipitation Plot' h='37955' id='28' is-fixed='true' param='vert' type-v2='layout-flow' w='99674' x='326' y='23619'>
+            <zone forceUpdate='true' friendly-name='Title Precipitation Analysis' h='3760' id='30' type-v2='text' w='99674' x='326' y='23619'>
+              <formatted-text>
+                <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='14'>Precipitation Analysis</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='1' />
+                <format attr='margin' value='0' />
+                <format attr='padding' value='3' />
+                <format attr='background-color' value='#87ceeb' />
+              </zone-style>
+            </zone>
+            <zone friendly-name='Plot and Filters' h='34195' id='36' param='horz' type-v2='layout-flow' w='99674' x='326' y='27379'>
+              <zone h='34195' id='37' name='State_Precipitation_Analysis' show-title='false' w='99674' x='326' y='27379'>
+                <layout-cache minheight='204' minwidth='779' type-h='scalable' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='0' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone fixed-size='339' friendly-name='Temperature Plot' h='37956' id='43' is-fixed='true' param='vert' type-v2='layout-flow' w='99674' x='326' y='61574'>
+            <zone h='3760' id='44' type-v2='text' w='99674' x='326' y='61574'>
+              <formatted-text>
+                <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='14'>Temperature Analysis</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='1' />
+                <format attr='margin' value='0' />
+                <format attr='background-color' value='#87ceeb' />
+              </zone-style>
+            </zone>
+            <zone friendly-name='Plot and Filters' h='34196' id='52' param='horz' type-v2='layout-flow' w='99674' x='326' y='65334'>
+              <zone h='34196' id='53' name='State_Season_Temperature_Analysis' show-title='false' w='99674' x='326' y='65334'>
+                <layout-cache minheight='204' minwidth='760' type-h='scalable' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+        <zone fixed-size='233' friendly-name='Precipitation Filters' h='8226' id='35' is-fixed='true' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='99282' x='718' y='15041'>
+          <zone h='7990' id='38' mode='checkdropdown' name='State_Precipitation_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]' type-v2='filter' w='24789' x='794' y='15159'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone h='7990' id='39' mode='checkdropdown' name='State_Precipitation_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]' type-v2='filter' values='relevant' w='24788' x='25583' y='15159'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone h='7990' id='40' mode='checkdropdown' name='State_Precipitation_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]' type-v2='filter' w='24788' x='50371' y='15159'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone h='7990' id='57' mode='checkdropdown' name='State_Season_Temperature_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Season:nk]' type-v2='filter' values='relevant' w='24788' x='75159' y='15159'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+        <zone friendly-name='Descriptive Statistics' h='14000' id='3' param='horz' type-v2='layout-flow' w='99400' x='500' y='625'>
+          <zone fixed-size='118' h='13764' id='27' is-fixed='true' is-scaled='1' param='E:/Bayer/Bayer_Logo.png' type-v2='bitmap' w='6250' x='553' y='743'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='1' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='403' friendly-name='Total Years' h='13764' id='5' is-fixed='true' param='horz' type-v2='layout-flow' w='21345' x='6803' y='743'>
+            <zone fixed-size='158' friendly-name='Label_Total_Years' h='13528' id='12' is-fixed='true' param='vert' type-v2='layout-flow' w='21239' x='6856' y='861'>
+              <zone fixed-size='41' forceUpdate='true' h='4818' id='13' is-fixed='true' type-v2='text' w='21239' x='6856' y='861'>
+                <formatted-text>
+                  <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Years of observation</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#00314e' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#a3e77f' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='84' h='8710' id='14' is-fixed='true' name='Total Years' show-title='false' w='21239' x='6856' y='5679'>
+                <layout-cache cell-count-w='1' non-cell-size-w='340' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='1' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='421' friendly-name='Total Regions' h='13764' id='11' is-fixed='true' param='horz' type-v2='layout-flow' w='22299' x='28148' y='743'>
+            <zone fixed-size='191' friendly-name='Label_Total_Regions' h='13528' id='16' is-fixed='true' param='vert' type-v2='layout-flow' w='22193' x='28201' y='861'>
+              <zone fixed-size='42' forceUpdate='true' h='4935' id='17' is-fixed='true' type-v2='text' w='22193' x='28201' y='861'>
+                <formatted-text>
+                  <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Regions In Focus</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#00314e' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#a3e77f' />
+                </zone-style>
+              </zone>
+              <zone fixed-size='215' h='8593' id='18' is-fixed='true' name='Total Regions' show-title='false' w='22193' x='28201' y='5796'>
+                <layout-cache cell-count-w='1' non-cell-size-w='352' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='1' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='487' friendly-name='Total Cities' h='13764' id='10' is-fixed='true' param='vert' type-v2='layout-flow' w='25794' x='50447' y='743'>
+            <zone fixed-size='43' friendly-name='Label_Total_Cities' h='5053' id='19' is-fixed='true' param='vert' type-v2='layout-flow' w='25688' x='50500' y='861'>
+              <zone fixed-size='44' forceUpdate='true' h='5053' id='20' is-fixed='true' type-v2='text' w='25688' x='50500' y='861'>
+                <formatted-text>
+                  <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Cities Considered</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#a3e77f' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='8475' id='21' name='Total Cities' show-title='false' w='25688' x='50500' y='5914'>
+              <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-w='460' type-h='cell' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='1' />
+            </zone-style>
+          </zone>
+          <zone friendly-name='Total Seasons' h='13764' id='9' param='horz' type-v2='layout-flow' w='23606' x='76241' y='743'>
+            <zone fixed-size='869' friendly-name='Label_Total_Seasons' h='13528' id='22' is-fixed='true' param='vert' type-v2='layout-flow' w='23500' x='76294' y='861'>
+              <zone fixed-size='42' forceUpdate='true' h='4935' id='24' is-fixed='true' type-v2='text' w='23500' x='76294' y='861'>
+                <formatted-text>
+                  <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Total Seasons</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#a3e77f' />
+                </zone-style>
+              </zone>
+              <zone h='8593' id='23' name='Total Seasons' show-title='false' w='23500' x='76294' y='5796'>
+                <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-w='444' type-h='cell' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='1' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1650' minheight='1650' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='64' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98120' id='63' param='vert' type-v2='layout-flow' w='99152' x='424' y='940'>
+                <zone fixed-size='108' h='13764' id='27' is-fixed='true' is-scaled='1' param='E:/Bayer/Bayer_Logo.png' type-v2='bitmap' w='6250' x='553' y='743'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='41' forceUpdate='true' h='4818' id='13' type-v2='text' w='21239' x='6856' y='861'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Years of observation</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#00314e' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#a3e77f' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='42' forceUpdate='true' h='4935' id='17' type-v2='text' w='22193' x='28201' y='861'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Regions In Focus</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#00314e' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#a3e77f' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='44' forceUpdate='true' h='5053' id='20' type-v2='text' w='25688' x='50500' y='861'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Cities Considered</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#a3e77f' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='42' forceUpdate='true' h='4935' id='24' type-v2='text' w='23500' x='76294' y='861'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='12'>Total Seasons</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#a3e77f' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='70' h='8710' id='14' is-fixed='true' name='Total Years' show-title='false' w='21239' x='6856' y='5679'>
+                  <layout-cache cell-count-w='1' non-cell-size-w='340' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='69' h='8593' id='18' is-fixed='true' name='Total Regions' show-title='false' w='22193' x='28201' y='5796'>
+                  <layout-cache cell-count-w='1' non-cell-size-w='352' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='69' h='8593' id='23' is-fixed='true' name='Total Seasons' show-title='false' w='23500' x='76294' y='5796'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-w='444' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='60' h='8475' id='21' is-fixed='true' name='Total Cities' show-title='false' w='25688' x='50500' y='5914'>
+                  <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-w='460' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' friendly-name='Title Precipitation Analysis' h='3760' id='30' type-v2='text' w='99674' x='326' y='23619'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='14'>Precipitation Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#87ceeb' />
+                  </zone-style>
+                </zone>
+                <zone h='7990' id='38' mode='checkdropdown' name='State_Precipitation_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]' type-v2='filter' w='24789' x='794' y='15159'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7990' id='39' mode='checkdropdown' name='State_Precipitation_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]' type-v2='filter' values='relevant' w='24788' x='25583' y='15159'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7990' id='40' mode='checkdropdown' name='State_Precipitation_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]' type-v2='filter' w='24788' x='50371' y='15159'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='264' h='34195' id='37' is-fixed='true' name='State_Precipitation_Analysis' show-title='false' w='99674' x='326' y='27379'>
+                  <layout-cache minheight='204' minwidth='779' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3760' id='44' type-v2='text' w='99674' x='326' y='61574'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#00314e' fontname='Tableau Semibold' fontsize='14'>Temperature Analysis</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#87ceeb' />
+                  </zone-style>
+                </zone>
+                <zone h='7990' id='57' mode='checkdropdown' name='State_Season_Temperature_Analysis' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Season:nk]' type-v2='filter' values='relevant' w='24788' x='75159' y='15159'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='265' h='34196' id='53' is-fixed='true' name='State_Season_Temperature_Analysis' show-title='false' w='99674' x='326' y='65334'>
+                  <layout-cache minheight='204' minwidth='760' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{504C7092-1495-4884-825E-AC3596AFB731}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='State_Precipitation_Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Region:nk]' type='filter' />
+            <card mode='checkdropdown' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:State:nk]' type='filter' values='relevant' />
+            <card mode='checkdropdown' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Year:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{690A116D-F512-4FE4-8399-41413282637A}' />
+    </window>
+    <window class='worksheet' name='State_Season_Temperature_Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.1snuv4812ubd2s0zwngq10ae0tw0].[none:Season:nk]' type='filter' values='relevant' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D4F3FF20-7519-4549-899F-DF72FE11D40F}' />
+    </window>
+    <window class='worksheet' name='Total Years'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{99FFE3FF-3B23-4EA4-8C0A-346AC2D93326}' />
+    </window>
+    <window class='worksheet' name='Total Regions'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F6838CF6-749D-4CFB-9032-59A582DB9A07}' />
+    </window>
+    <window class='worksheet' name='Total Cities'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{148E7CF4-E7E1-47B2-B75C-8E935F3EA628}' />
+    </window>
+    <window class='worksheet' name='Total Seasons'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{68542132-F8C0-43E1-AC84-A6F2CA00E360}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Precipitation_Temp_DB'>
+      <viewpoints>
+        <viewpoint name='State_Precipitation_Analysis'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='State_Season_Temperature_Analysis'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Cities'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Regions'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Seasons'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Years'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='30' />
+      <simple-id uuid='{2C8B1318-88B2-4FF9-BA83-53EC38692D18}' />
+    </window>
+  </windows>
+</workbook>
