@@ -159,6 +159,24 @@ soil_db_obj.close_connection()
 results = soil_db_obj.read_table("Select * FROM Soil_Moisture")    
 for row in results:
     print(row)
+
+############################################################################################################################
+
+geospatial_df_test = pd.read_excel(".\Inputs\City_Geospatial_Data_Test.xlsx")
+openweather_endpoint = r"https://api.openweathermap.org/data/2.5/weather?"
+openweather_api_key = "464f061d35c8e41f2c783f8262dc42b1"
+
+for index,row in geospatial_df_test.iterrows():
+        latitude = row[1]
+        longitude = row[2]
+        city = row[0]
+        print(f'Retrieving data for {city}')
+        test_openweather = "lat={latitude}&lon={longitude}&appid="+openweather_api_key
+        openweather_api_request = requests.get(openweather_endpoint+test_openweather)
+        openweather_data = json.loads(openweather_api_request.text)
+        print(openweather_data)	
+
+############################################################################################################################
 '''
 items = ['apple',1,2,3,'orange']
 
@@ -215,4 +233,17 @@ openweather_data = json.loads(openweather_api_request.text)
 
 print(openweather_data)	
 '''
+latitude, longitude = 41.2956,-82.1512
 
+latitude, longitude = 44.34, 10.99
+
+test_weatherbit = f"lat={latitude}&lon={longitude}&key="+weatherbit_api_key+"&include=minutely"
+test_openweather = "lat={latitude}&lon={longitude}&appid="+openweather_api_key
+
+weatherbit_api_request = requests.get(weatherbit_endpoint+test_weatherbit)
+openweather_api_request = requests.get(openweather_endpoint+test_openweather)
+
+weatherbit_data = json.loads(weatherbit_api_request.text)
+openweather_data = json.loads(openweather_api_request.text)
+
+print(openweather_data)	
