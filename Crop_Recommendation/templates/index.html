@@ -18,40 +18,46 @@
 
     <!-- Inputs for prediction -->
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <!--<form action="{{url_for('predict')}}" method="post"></form>-->
-        <form>
+        <form action="{{url_for('predict')}}" method="post">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group md-4">
-                        <label for="Nitrogen_Content_Label">Enter the ratio of Nitrogen content</label>
+                    <div class="form-group md-3">
+                        <label for="Nitrogen_Content_Label">Enter ratio of Nitrogen content</label>
                         <textarea class="form-control" id="Nitrogen_Content_Text" rows=1 required="required"></textarea>
                     </div>
-                    <div class="form-group md-4">
-                        <label for="Phosphorous_Content_Label">Enter the ratio of Phosphorous content</label>
+                    <div class="form-group md-3">
+                        <label for="Phosphorous_Content_Label">Enter ratio of Phosphorus content</label>
                         <textarea class="form-control" id="Phosphorous_Content_Text" rows=1 required="required"></textarea>
                     </div>
-                    <div class="form-group md-4">
-                        <label for="Potassium_Content_Label">Enter the ratio of Potassium content</label>
+                    <div class="form-group md-3">
+                        <label for="Potassium_Content_Label">Enter ratio of Potassium content</label>
                         <textarea class="form-control" id="Potassium_Content_Text" rows=1 required="required"></textarea>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group md-4">
+                    <div class="form-group md-3">
                         <label for="Temperature_Label">Enter the temperature in celsius</label>
                         <textarea class="form-control" id="Temperature_Text" rows=1 required="required"></textarea>
                     </div>
-                    <div class="form-group md-4">
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group md-3">
                         <label for="Relative_Humidity_Label">Enter the relative humidity in %</label>
                         <textarea class="form-control" id="Relative_Humidity_Text" rows=1 required="required"></textarea>
                     </div>
-                    <div class="form-group md-4">
-                        <label for="pH_Content_Label">Enter the ph value(0-14) of the soil</label>
+                    <div class="form-group md-3">
+                        <label for="pH_Content_Label">Enter ph value(0-14) of the soil</label>
                         <textarea class="form-control" id="pH_Content_Text" rows=1 required="required"></textarea>
                     </div>
-                    <div class="form-group md-4">
+                    <div class="form-group md-3">
                         <label for="Rainfall_Label">Enter rainfall in mm</label>
                         <textarea class="form-control" id="Rainfall_Text" rows=1 required="required"></textarea>
                     </div>
+                    <div class="form-group md-3">
+                        <label for="Season_Label">Choose a sowing season</label>
+                        <select class="form-control" id="Season_Select">
+                          <option>Summer</option>
+                          <option>Winter</option>
+                        </select>
+                      </div>
                 </div>
             </div>    
             <div class="text-center">
@@ -70,8 +76,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!--{{prediction_text}}-->
-                    Lorem Ipsum
+                    {{prediction_text}}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
